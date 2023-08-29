@@ -5,6 +5,9 @@ import {
   StatEl,
   El,
   StatCoefficient,
+  ElGood,
+  ElNeutral,
+  ElBad,
 } from './Statistics.style';
 
 export const Statistics = ({
@@ -19,9 +22,9 @@ export const Statistics = ({
     <WrapStat>
       <StatTitel>{title}</StatTitel>
       <StatEl>
-        <El>Good:{good}</El>
-        <El>Neutral:{neutral}</El>
-        <El>Bad:{bad}</El>
+        <ElGood>Good:{good}</ElGood>
+        <ElNeutral>Neutral:{neutral}</ElNeutral>
+        <ElBad>Bad:{bad}</ElBad>
       </StatEl>
       <StatCoefficient>
         <El>Total:{total}</El>

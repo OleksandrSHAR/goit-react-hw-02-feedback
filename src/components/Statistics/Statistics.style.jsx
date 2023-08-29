@@ -44,3 +44,18 @@ export const StatCoefficient = styled.ul`
   gap: 30px;
   justify-content: center;
 `;
+export const ElGood = styled.li`
+  background-color: ${p => p.theme.colors.gren};
+  border-radius: 10px;
+  width: 100%;
+`;
+export const ElNeutral = styled.li`
+  background-color: ${p => p.theme.colors.yeloow};
+  border-radius: 10px;
+  width: 100%;
+`;
+export const ElBad = styled.li`
+  background-color: ${p => p.theme.colors.red};
+  border-radius: 10px;
+  width: 100%;
+`;
