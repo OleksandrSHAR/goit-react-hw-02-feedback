@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const WrapFetbeck = styled.div`
+export const WrapStat = styled.div`
+  padding-left: 5px;
+  padding-right: 5px;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -15,41 +17,30 @@ export const WrapFetbeck = styled.div`
   margin-top: 20px;
   box-shadow: 3px 3px ${p => p.theme.colors.aquaDarck};
 `;
-export const FitbackTitel = styled.h1`
+export const StatTitel = styled.h2`
   font-family: Epilogue;
   font-size: 30px;
   font-style: normal;
   font-weight: 300;
 `;
-export const FetbeckEl = styled.ul`
+export const StatEl = styled.ul`
   display: flex;
   gap: 10px;
   justify-content: center;
 `;
 
-export const FetbeckItem = styled.li`
-  :hover {
-    background-color: ${props => {
-      switch (props.option) {
-        case 'good':
-          return '#04FF20';
-        case 'neutral':
-          return '#E0EB54';
-        case 'bad':
-          return '#FF050B';
-        default:
-          return null;
-      }
-    }};
-  }
-`;
-export const BtFetbeck = styled.button`
+export const El = styled.li`
+  width: 100%;
+  border-radius: 10px;
+  background-color: ${p => p.theme.colors.wite};
   font-family: Epilogue;
 
   font-style: normal;
   font-weight: 500;
-  padding: 3px;
-  border-radius: 10px;
-  border: none;
-  background-color: ${p => p.theme.colors.wite};
+`;
+export const StatCoefficient = styled.ul`
+  display: flex;
+
+  gap: 30px;
+  justify-content: center;
 `;

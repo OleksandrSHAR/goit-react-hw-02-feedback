@@ -1,11 +1,17 @@
 import PropTypes, { arrayOf } from 'prop-types';
-import { BtFetbeck, FetbeckItem } from './PleseLeave.style';
+import {
+  BtFetbeck,
+  FetbeckItem,
+  FetbeckEl,
+  WrapFetbeck,
+  FitbackTitel,
+} from './PleseLeave.style';
 
 export const PleseLeave = ({ title, onResponse, options }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <ul>
+    <WrapFetbeck>
+      <FitbackTitel>{title}</FitbackTitel>
+      <FetbeckEl>
         {options.map(option => {
           return (
             <FetbeckItem option={option} key={option}>
@@ -19,8 +25,8 @@ export const PleseLeave = ({ title, onResponse, options }) => {
             </FetbeckItem>
           );
         })}
-      </ul>
-    </div>
+      </FetbeckEl>
+    </WrapFetbeck>
   );
 };
 

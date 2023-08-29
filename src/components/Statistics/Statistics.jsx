@@ -1,4 +1,11 @@
 import PropTypes from 'prop-types';
+import {
+  WrapStat,
+  StatTitel,
+  StatEl,
+  El,
+  StatCoefficient,
+} from './Statistics.style';
 
 export const Statistics = ({
   title,
@@ -9,16 +16,18 @@ export const Statistics = ({
   total,
 }) => {
   return (
-    <div>
-      <h2>{title}</h2>
-      <ul>
-        <li>{good}</li>
-        <li>{neutral}</li>
-        <li>{bad}</li>
-        <li>{total}</li>
-        <li>{coefficientPositive}%</li>
-      </ul>
-    </div>
+    <WrapStat>
+      <StatTitel>{title}</StatTitel>
+      <StatEl>
+        <El>Good:{good}</El>
+        <El>Neutral:{neutral}</El>
+        <El>Bad:{bad}</El>
+      </StatEl>
+      <StatCoefficient>
+        <El>Total:{total}</El>
+        <El>Positive:{coefficientPositive}%</El>
+      </StatCoefficient>
+    </WrapStat>
   );
 };
 Statistics.propTypes = {

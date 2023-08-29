@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
-    orang: '#F57F42',
+    aqua: '#6CF4DB',
+    aquaDarck: '#49B4B8',
     greu: '#C4C0C4',
     red: '#FF050B',
     gren: '#04FF20',
