@@ -17,12 +17,7 @@ export const WrapStat = styled.div`
   margin-top: 20px;
   box-shadow: 3px 3px ${p => p.theme.colors.aquaDarck};
 `;
-export const StatTitel = styled.h2`
-  font-family: Epilogue;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 300;
-`;
+
 export const StatEl = styled.ul`
   display: flex;
   gap: 10px;

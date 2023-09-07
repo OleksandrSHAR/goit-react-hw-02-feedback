@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import {
   WrapStat,
-  StatTitel,
   StatEl,
   El,
   StatCoefficient,
@@ -11,16 +10,14 @@ import {
 } from './Statistics.style';
 
 export const Statistics = ({
-  title,
   good,
   neutral,
   bad,
-  coefficientPositive,
+  positivePercentage,
   total,
 }) => {
   return (
     <WrapStat>
-      <StatTitel>{title}</StatTitel>
       <StatEl>
         <ElGood>Good:{good}</ElGood>
         <ElNeutral>Neutral:{neutral}</ElNeutral>
@@ -28,7 +25,7 @@ export const Statistics = ({
       </StatEl>
       <StatCoefficient>
         <El>Total:{total}</El>
-        <El>Positive:{coefficientPositive}%</El>
+        <El>Positive:{positivePercentage}%</El>
       </StatCoefficient>
     </WrapStat>
   );
@@ -38,5 +35,5 @@ Statistics.propTypes = {
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  coefficientPositive: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };

@@ -4,13 +4,11 @@ import {
   FetbeckItem,
   FetbeckEl,
   WrapFetbeck,
-  FitbackTitel,
 } from './PleseLeave.style';
 
-export const PleseLeave = ({ title, onResponse, options }) => {
+export const PleseLeave = ({ onLeaveFeedback, options }) => {
   return (
     <WrapFetbeck>
-      <FitbackTitel>{title}</FitbackTitel>
       <FetbeckEl>
         {options.map(option => {
           return (
@@ -18,7 +16,7 @@ export const PleseLeave = ({ title, onResponse, options }) => {
               <BtFetbeck
                 key={option}
                 type="button"
-                onClick={() => onResponse(option)}
+                onClick={() => onLeaveFeedback(option)}
               >
                 {option}
               </BtFetbeck>
@@ -32,5 +30,5 @@ export const PleseLeave = ({ title, onResponse, options }) => {
 
 PleseLeave.propTypes = {
   options: arrayOf(PropTypes.string.isRequired),
-  onResponse: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

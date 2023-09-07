@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { PleseLeave } from './PleseLeave/PleseLeave';
 import { Statistics } from './Statistics/Statistics';
 import { GlobalStyle } from 'GlobalStyle';
+import { Section } from './Section/Section';
+import { Notification } from './Notification.jsx/Notification';
 
 export class App extends Component {
   state = {
@@ -9,37 +11,45 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  responseUsers = e => {
+  onLeaveFeedback = e => {
     this.setState({ [e]: this.state[e] + 1 });
   };
 
-  totalFeedback = ({ good, neutral, bad }) => good + neutral + bad;
+  countTotalFeedback = ({ good, neutral, bad }) => good + neutral + bad;
 
-  coefficientPositive = ({ good, neutral, bad }) => {
+  countPositiveFeedbackPercentage = ({ good, neutral, bad }) => {
     if (good === 0) {
       return 0;
     }
-    return Math.round((good * 100) / this.totalFeedback(this.state));
+    return Math.round((good * 100) / this.countTotalFeedback(this.state));
   };
   render() {
     const { good, neutral, bad } = this.state;
-
+    const renderFeedbeck = bad + good + neutral > 0;
     return (
       <div>
-        <PleseLeave
-          colors={this.colors}
-          title="Please leave feedback"
-          options={Object.keys(this.state)}
-          onResponse={this.responseUsers}
-        />
-        <Statistics
-          title="Statistics"
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.totalFeedback(this.state)}
-          coefficientPositive={this.coefficientPositive(this.state)}
-        />
+        {' '}
+        <Section title="Please leave feedback">
+          <PleseLeave
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
+        </Section>
+        <Section title="Statistics">
+          {renderFeedbeck ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback(this.state)}
+              positivePercentage={this.countPositiveFeedbackPercentage(
+                this.state
+              )}
+            />
+          ) : (
+            <Notification message="There is no feedback"> </Notification>
+          )}
+        </Section>
         <GlobalStyle />
       </div>
     );

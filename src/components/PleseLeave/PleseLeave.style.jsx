@@ -15,12 +15,7 @@ export const WrapFetbeck = styled.div`
   margin-top: 20px;
   box-shadow: 3px 3px ${p => p.theme.colors.aquaDarck};
 `;
-export const FitbackTitel = styled.h1`
-  font-family: Epilogue;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 300;
-`;
+
 export const FetbeckEl = styled.ul`
   display: flex;
   gap: 10px;
